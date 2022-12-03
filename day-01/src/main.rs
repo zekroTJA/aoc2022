@@ -1,9 +1,7 @@
 use std::{fs::File, io::Read};
 
 fn main() {
-    let mut input_file = File::open("day-01/input.txt").expect("input file");
-    let mut input = String::new();
-    input_file.read_to_string(&mut input).expect("read input");
+    let input = lib::read_input!();
 
     let parts: Vec<&str> = input.split("\n\n").collect();
 
