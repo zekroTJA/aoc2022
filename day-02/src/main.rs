@@ -78,9 +78,9 @@ mod test {
 
     #[test]
     fn test_get_shape_points() {
-        assert_eq!(get_shape_points('A'), 1);
-        assert_eq!(get_shape_points('B'), 2);
-        assert_eq!(get_shape_points('C'), 3);
+        assert_eq!(get_shape_points('X'), 1);
+        assert_eq!(get_shape_points('Y'), 2);
+        assert_eq!(get_shape_points('Z'), 3);
     }
 
     #[test]
