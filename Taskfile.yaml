@@ -1,0 +1,31 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task: test
+
+  new:
+    desc: "Create a new day project."
+    cmds:
+      - bash scripts/new.sh
+
+  commit:
+    desc: "Commit the latest day solution."
+    cmds:
+      - bash scripts/commit.sh
+
+  test:
+    desc: "Run all unit tests."
+    cmds:
+      - cargo test
+
+  run:
+    desc: "Run a specified day's solution."
+    preconditions:
+      - sh: '[ ! -z "{{.CLI_ARGS}}" ]'
+        msg: "Please specify a day number! (task run -- day-01)"
+    cmds:
+      - cargo run -p {{.CLI_ARGS}}
