@@ -1,5 +1,3 @@
-use std::{fs::File, io::Read};
-
 fn main() {
     let input = lib::read_input!();
 
