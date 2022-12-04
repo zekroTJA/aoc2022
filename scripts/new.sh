@@ -1,9 +1,13 @@
+source $PWD/.env || { echo "No .env file found in the current directory!"; exit 1; }
+
+[ -z $SESSION_TOKEN ] && { echo "SESSION_TOKEN is not set in .env file!"; exit 1; }
+
 current_day=$(ls -r1 | grep day- | head -1)
 current_day=${current_day/*-}
 next_day=$((current_day + 1))
 next_day_padded=$(printf "%02d" $next_day)
 
-awk -F, "/\"day-03\",/"' { print; print "    \"day-'"$next_day_padded"'\","; next }1' Cargo.toml | tee .tmp
+awk -F, '/"'"day-$current_day"'",/ { print; print "    \"day-'"$next_day_padded"'\","; next }1' Cargo.toml | tee .tmp
 mv .tmp Cargo.toml
 
 cargo new --bin --vcs=none "day-$next_day_padded"
@@ -21,7 +25,7 @@ mod test {
 }
 EOF
 
-curl -Lo "day-$next_day_padded/input.txt" "https://adventofcode.com/2022/day/${next_day}/input"
+curl -L -H "Cookie: session=$SESSION_TOKEN" -o "day-$next_day_padded/input.txt" "https://adventofcode.com/2022/day/${next_day}/input"
 
 touch "day-$next_day_padded/challenge.txt"
 touch "day-$next_day_padded/test_input.txt"
