@@ -1,5 +1,5 @@
 fn main() {
-    let input = lib::read_input!();
+    let input: String = lib::read_input!();
 
     let parts: Vec<&str> = input.split("\n\n").collect();
 

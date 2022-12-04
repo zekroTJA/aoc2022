@@ -25,7 +25,7 @@ fn find_common_item(group: &[String]) -> char {
 }
 
 fn main() {
-    let input = lib::read_input!();
+    let input: String = lib::read_input!();
 
     let rucksacks: Vec<(&str, &str)> = input
         .split('\n')

@@ -11,8 +11,8 @@ cargo add -p "day-$next_day_padded" lib --path="lib"
 
 cat > "day-$next_day_padded/src/main.rs" << EOF
 fn main() {
-    // let input = lib::read_input!();
-    let input = lib::read_test_input!(); // TODO: Remove
+    // let input: String = lib::read_input!();
+    let input: String = lib::read_test_input!(); // TODO: Remove
 }
 
 #[cfg(test)]

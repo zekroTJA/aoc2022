@@ -45,7 +45,7 @@ fn get_points_part2(m: &[char]) -> u32 {
 }
 
 fn main() {
-    let input = lib::read_input!();
+    let input: String = lib::read_input!();
 
     let matches: Vec<_> = input
         .split('\n')
