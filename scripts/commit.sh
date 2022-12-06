@@ -11,7 +11,7 @@ grep "TODO:" "$current_day/src/main.rs" && {
     abort "main.rs still contains TODOs!"
 }
 
-[ $(cat day-04/challenge.txt | wc -c) == "0" ] && {
+[ $(cat $current_day/challenge.txt | wc -c) == "0" ] && {
     abort "challenge.txt is empty!"
 }
 
