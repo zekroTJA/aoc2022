@@ -4,7 +4,7 @@ source $PWD/.env || { echo "No .env file found in the current directory!"; exit 
 
 current_day=$(ls -r1 | grep day- | head -1)
 current_day=${current_day/*-}
-next_day=$((current_day + 1))
+next_day=$(expr $current_day + 1)
 next_day_padded=$(printf "%02d" $next_day)
 
 awk -F, '/"'"day-$current_day"'",/ { print; print "    \"day-'"$next_day_padded"'\","; next }1' Cargo.toml | tee .tmp
