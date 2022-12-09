@@ -64,11 +64,7 @@ fn main() {
     let (stack, moves) = input.split_once("\n\n").unwrap();
 
     let stack = parse_stack(stack);
-    let moves: Vec<Move> = moves
-        .split('\n')
-        .filter(|l| !l.is_empty())
-        .map(|l| l.into())
-        .collect();
+    let moves: Vec<Move> = moves.split('\n').map(|l| l.into()).collect();
 
     // Create a deep copy of the stack to solve part 1
     let mut stack_1: Vec<Vec<char>> = stack.to_vec();

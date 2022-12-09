@@ -33,7 +33,6 @@ impl From<&&str> for Calories {
     fn from(v: &&str) -> Self {
         let items: Vec<u32> = v
             .split('\n')
-            .filter(|e| !e.is_empty())
             .map(|e| e.parse::<u32>().expect("parse u32"))
             .collect();
         Self(items)

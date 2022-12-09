@@ -20,7 +20,6 @@ fn main() {
 
     let sets: Vec<Vec<(u32, u32)>> = input
         .split('\n')
-        .filter(|l| !l.is_empty())
         .map(|s| s.split(',').map(to_set).collect())
         .collect();
 

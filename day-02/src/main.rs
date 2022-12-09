@@ -49,7 +49,6 @@ fn main() {
 
     let matches: Vec<_> = input
         .split('\n')
-        .filter(|l| !l.is_empty())
         .map(|line| {
             line.split_whitespace()
                 .map(|s| s.as_bytes()[0] as char)
