@@ -56,7 +56,6 @@ fn main() {
     let input: String = lib::read_input!();
 
     let grid: Vec<Vec<u8>> = input
-        .trim_end()
         .split('\n')
         .map(|l| l.chars().map(|c| c as u8 - 48).collect())
         .collect();

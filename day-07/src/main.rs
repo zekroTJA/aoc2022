@@ -39,7 +39,7 @@ fn add_dir_size(sizes: &mut HashMap<String, usize>, dir_stack: &DirStack, size: 
 fn main() {
     let input: String = lib::read_input!();
 
-    let lines: Vec<&str> = input.trim_end().split('\n').collect();
+    let lines: Vec<&str> = input.split('\n').collect();
 
     let mut dir_stack = DirStack::new();
     let mut dir_sizes: HashMap<String, usize> = HashMap::new();
