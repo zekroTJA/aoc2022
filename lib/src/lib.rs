@@ -7,7 +7,7 @@ macro_rules! read_input_from_file {
         let mut input_file = std::fs::File::open(&path).expect("input file");
         let mut input = String::new();
         input_file.read_to_string(&mut input).expect("read input");
-        input
+        input.trim_end().to_owned()
     }};
 }
 
