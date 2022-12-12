@@ -1,3 +1,7 @@
+pub mod direction;
+pub mod pos;
+pub mod vector;
+
 #[macro_export]
 macro_rules! read_input_from_file {
     ($file:literal) => {{
