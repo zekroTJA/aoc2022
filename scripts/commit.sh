@@ -15,9 +15,9 @@ grep "TODO:" "$current_day/src/main.rs" && {
     abort "challenge.txt is empty!"
 }
 
-# cargo run -p "$current_day" || {
-#     abort "Run fails!"
-# }
+cargo run -p "$current_day" || {
+    abort "Run fails!"
+}
 
 cargo test -p "$current_day" || {
     abort "Unit Tests fail!"

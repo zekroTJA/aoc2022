@@ -23,7 +23,7 @@ impl Move {
             for (i, k) in knots.iter().enumerate() {
                 if i == 0 {
                     let mut k = k.borrow_mut();
-                    *k = *k + self.direction.into();
+                    *k += self.direction.into();
                 } else {
                     let mut k = k.borrow_mut();
                     let kb = knots[i - 1].borrow();
