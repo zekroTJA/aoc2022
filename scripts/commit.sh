@@ -15,7 +15,11 @@ grep "TODO:" "$current_day/src/main.rs" && {
     abort "challenge.txt is empty!"
 }
 
-cargo run -p "$current_day" || {
+cargo build --release -p "$current_day" || {
+    abort "Build fails!"
+}
+
+./target/release/"$current_day" || {
     abort "Run fails!"
 }
 
