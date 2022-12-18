@@ -1,6 +1,5 @@
-use std::ops::{Add, AddAssign, Sub, SubAssign};
-
 use crate::vector::Vector;
+use std::ops::{Add, AddAssign, Sub, SubAssign};
 
 #[derive(Clone, Copy, Hash, Eq, PartialEq, Debug)]
 pub struct Pos(pub isize, pub isize);
