@@ -23,6 +23,15 @@ tasks:
       - cargo test
 
   run:
-    desc: "Run all day's solution or a selected one by passing the number of the day."
+    aliases:
+      - "r"
+    desc: "Run solution with user input."
     cmds:
       - bash scripts/run.sh {{.CLI_ARGS}}
+  
+  runtest:
+    aliases:
+      - "rt"
+    desc: "Run solution with test input."
+    cmds:
+      - bash scripts/run.sh {{.CLI_ARGS}} --test
