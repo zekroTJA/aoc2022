@@ -35,3 +35,19 @@ tasks:
     desc: "Run solution with test input."
     cmds:
       - bash scripts/run.sh {{.CLI_ARGS}} --test
+
+  releaserun:
+    aliases:
+      - "rr"
+    env:
+      RELEASE: "true"
+    cmds:
+      - bash scripts/run.sh {{.CLI_ARGS}}
+    
+  releaseruntest:
+    aliases:
+      - "rrt"
+    env:
+      RELEASE: "true"
+    cmds:
+      - bash scripts/run.sh {{.CLI_ARGS}} --test
